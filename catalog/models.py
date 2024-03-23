@@ -3,6 +3,19 @@ from django.db import models
 NULLABLE = {'null': True, 'blank': True}
 
 
+class Category(models.Model):
+    name = models.CharField(max_length=150, verbose_name='Категория')
+    description = models.TextField(verbose_name='Описание')
+
+    def __str__(self):
+        return f'Категория {self.name}'
+
+    class Meta:
+        verbose_name = 'Категория'
+        verbose_name_plural = 'Категории'
+        ordering = ('name',)
+
+
 class Product(models.Model):
     name = models.CharField(max_length=150, verbose_name='Имя')
     description = models.TextField(verbose_name='Описание')
@@ -18,17 +31,4 @@ class Product(models.Model):
     class Meta:
         verbose_name = 'Товар'
         verbose_name_plural = 'Товары'
-        ordering = ('name',)
-
-
-class Category(models.Model):
-    name = models.CharField(max_length=150, verbose_name='Категория')
-    description = models.TextField(verbose_name='Описание')
-
-    def __str__(self):
-        return f'Категория {self.name}'
-
-    class Meta:
-        verbose_name = 'Категория'
-        verbose_name_plural = 'Категории'
         ordering = ('name',)
