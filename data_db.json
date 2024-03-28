@@ -3,24 +3,24 @@
     "model": "catalog.category",
     "pk": 1,
     "fields": {
-      "name": "╨Ь╨╛╨╗╨╛╤З╨╜╤Л╨╡ ╨┐╤А╨╛╨┤╤Г╨║╤В╤Л",
-      "description": "╨Ь╨╛╨╗╨╛╨║╨╛, ╤Б╤Л╤А╤Л, ╤Б╨╝╨╡╤В╨░╨╜╨░"
+      "name": "Молочные продукты",
+      "description": "Молоко, сыры, сметана"
     }
   },
   {
     "model": "catalog.category",
     "pk": 2,
     "fields": {
-      "name": "╨Т╤Л╨┐╨╡╤З╨║╨░",
-      "description": "╨е╨╗╨╡╨▒, ╨▒╤Г╨╗╨╛╤З╨║╨╕"
+      "name": "Выпечка",
+      "description": "Хлеб, булочки"
     }
   },
   {
     "model": "catalog.product",
     "pk": 1,
     "fields": {
-      "name": "╨Я╤А╨╛╤Б╤В╨╛╨║╨▓╨░╤И╨╕╨╜╨╛",
-      "description": "╨б╤Л╤А 5%",
+      "name": "Простоквашино",
+      "description": "Сыр 5%",
       "image": "",
       "category": 1,
       "price": 80,
@@ -32,8 +32,8 @@
     "model": "catalog.product",
     "pk": 2,
     "fields": {
-      "name": "╨Т╨╡╤Б╨╡╨╗╤Л╨╣ ╨╝╨╛╨╗╨╛╤З╨╜╨╕╨║",
-      "description": "╨б╤Л╤А 2,5%",
+      "name": "Веселый молочник",
+      "description": "Сыр 2,5%",
       "image": "",
       "category": 1,
       "price": 90,
@@ -45,8 +45,8 @@
     "model": "catalog.product",
     "pk": 3,
     "fields": {
-      "name": "╨Ф╨╛╨╝╨╕╨║ ╨▓ ╨┤╨╡╤А╨╡╨▓╨╜╨╡",
-      "description": "╨б╨╝╨╡╤В╨░╨╜╨░ 2%",
+      "name": "Домик в деревне",
+      "description": "Сметана 2%",
       "image": "",
       "category": 1,
       "price": 85,
@@ -58,8 +58,8 @@
     "model": "catalog.product",
     "pk": 4,
     "fields": {
-      "name": "╨б╨╡╨╗╨╛ ╨Ч╨╡╨╗╨╡╨╜╨╛╨╡",
-      "description": "╨б╨╝╨╡╤В╨░╨╜╨░ 1,5%",
+      "name": "Село Зеленое",
+      "description": "Сметана 1,5%",
       "image": "",
       "category": 1,
       "price": 75,
@@ -71,8 +71,8 @@
     "model": "catalog.product",
     "pk": 5,
     "fields": {
-      "name": "╨Я╨╡╨║╨░╤А╤М",
-      "description": "╨е╨╗╨╡╨▒ ╨а╨╢╨░╨╜╨╛╨╣",
+      "name": "Пекарь",
+      "description": "Хлеб Ржаной",
       "image": "",
       "category": 2,
       "price": 60,
@@ -84,8 +84,8 @@
     "model": "catalog.product",
     "pk": 6,
     "fields": {
-      "name": "╨Ъ╨╛╨╗╨╛╨╝╨╡╨╜╤Б╨║╨╛╨╡",
-      "description": "╨е╨╗╨╡╨▒ ╨Ч╨░╨▓╨░╤А╨╜╨╛╨╣",
+      "name": "Коломенское",
+      "description": "Хлеб Заварной",
       "image": "",
       "category": 2,
       "price": 55,
@@ -97,8 +97,8 @@
     "model": "catalog.product",
     "pk": 7,
     "fields": {
-      "name": "╨Ъ╨╛╨╗╨╛╨╝╨╡╨╜╤Б╨║╨╛╨╡",
-      "description": "╨С╤Г╨╗╨╛╤З╨║╨░ ╤Б ╨╕╨╖╤О╨╝╨╛╨╝",
+      "name": "Коломенское",
+      "description": "Булочка с изюмом",
       "image": "",
       "category": 2,
       "price": 20,
