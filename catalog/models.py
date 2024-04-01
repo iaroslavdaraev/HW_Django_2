@@ -26,6 +26,7 @@ class Product(models.Model):
     updated_at = models.DateField(auto_now=True, **NULLABLE)
 
 
+
     def __str__(self):
         return f'Товар {self.name} в {self.category}'
 
