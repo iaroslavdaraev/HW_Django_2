@@ -1,14 +1,12 @@
 from django.shortcuts import render
+from django.views.generic import ListView, DetailView
 
 from catalog.models import Product
 
 
-def index_homepage(request):
-    product_list = Product.objects.all()
-    context = {
-        'object_list': product_list
-    }
-    return render(request, 'catalog/homepage.html', context)
+class ProductListView(ListView):
+    model = Product
+    template_name = 'catalog/homepage.html'
 
 
 def contacts(request):
@@ -23,10 +21,6 @@ def contacts(request):
     return render(request, 'catalog/contacts.html', context)
 
 
-def product(request, id):
-    product_object = Product.objects.get(pk=id)
-    context = {
-        'object': product_object,
-        'title': product_object.name
-    }
-    return render(request, 'catalog/product.html', context)
+class ProductDetailView(DetailView):
+    model = Product
+    template_name = 'catalog/product.html'
