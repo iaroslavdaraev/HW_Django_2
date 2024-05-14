@@ -11,18 +11,18 @@
                 <div class="card-body">
                     <h1 class="card-title pricing-card-title">В продаже</h1>
                     <div class="col-12 mb-4">
-                        <a class="btn btn-outline-primary" href="{% url 'catalog:create_product' %}" Добавить
-                           продукт</a>
+                        <a class="btn btn-outline-primary" href="{% url 'catalog:create_product' %}">Добавить
+                            продукт</a>
                     </div>
                     <ul class="list-unstyled mt-3 mb-4 text-start m-3">
                         {% for object in object_list %}
                         <li><a class="text-muted" href="{% url 'catalog:product' object.pk %}">{{ object.name }}</a>
+                            {% for version in object.version_set.all %}
+                            {% if version.is_current %}
+                            <p class="card-text">Версия: {{ version.version_number }} - {{ version.version_name }}</p>
+                            {% endif %}
+                            {% endfor %}
                         </li>
-                        {% for version in object.version_set.all %}
-                        {% if version.is_current %}
-                        <p class="card-text">Версия: {{ version.version_number }} - {{ version.version_name }}</p>
-                        {% endif %}
-                        {% endfor %}
                         <li>{{ object.description | truncatechars:100 }}</li>
                         <div class="btn-group">
                             <a href="{% url 'catalog:update_product' object.pk %}" type="button"
@@ -36,4 +36,5 @@
             </div>
         </div>
     </div>
-    {% endblock %}
+</div>
+{% endblock %}
