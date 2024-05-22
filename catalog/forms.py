@@ -1,6 +1,6 @@
 from django import forms
 
-from catalog.models import Product
+from catalog.models import Product, Version
 
 
 class StyleFormMixin:
@@ -21,3 +21,9 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
         if any([bad_word in cleaned_data for bad_word in bad_words]):
             raise forms.ValidationError('Недопустимое слово')
         return cleaned_data
+
+
+class VersionForm(StyleFormMixin, forms.ModelForm):
+    class Meta:
+        model = Version
+        fields = '__all__'
