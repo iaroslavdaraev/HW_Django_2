@@ -22,6 +22,13 @@ class ProductForm(StyleFormMixin, forms.ModelForm):
             raise forms.ValidationError('Недопустимое слово')
         return cleaned_data
 
+    def clean_description(self):
+        bad_words = ['казино', 'криптовалюта', 'крипта', 'биржа', 'дешево', 'бесплатно', 'обман', 'полиция', 'радар']
+        cleaned_data = self.cleaned_data['description'].lower()
+        if any([bad_word in cleaned_data for bad_word in bad_words]):
+            raise forms.ValidationError('Недопустимое слово')
+        return cleaned_data
+
 
 class VersionForm(StyleFormMixin, forms.ModelForm):
     class Meta:
