@@ -1,3 +1,4 @@
+from django.conf import settings
 from django.db import models
 from django.db.models.signals import post_save
 from django.dispatch import receiver
@@ -26,6 +27,7 @@ class Product(models.Model):
     price = models.IntegerField()
     created_at = models.DateField(auto_now_add=True, **NULLABLE)
     updated_at = models.DateField(auto_now=True, **NULLABLE)
+    creator = models.ForeignKey(settings.AUTH_USER_MODEL, verbose_name='Создатель', on_delete=models.SET_NULL, **NULLABLE)
 
     def __str__(self):
         return f'Товар {self.name} в {self.category}'
